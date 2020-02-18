@@ -347,7 +347,7 @@ object JsonDiff {
         val target = target_.asJsonArray
         while (targetIdx < targetSize) {
             val jsonNode = target.get(targetIdx)
-            val currPath = getPath(path, pos)
+            val currPath = getPath(path, "-")
             diffs.add(Diff.generateDiff(op.ADD, currPath, jsonNode.deepCopy()))
             pos++
             targetIdx++
